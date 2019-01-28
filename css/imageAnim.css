@@ -1,0 +1,101 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+	margin: 0px;
+	border: 0px;
+	background-image:url(../images/puzzle2.jpg);
+	background-repeat:repeat;
+	background-color: #333;
+	color:#FFF;
+	font-family: 'Luckiest Guy', sans-serif;
+	font-size:16px;
+}
+
+#game-boards {
+	width: 100%;
+	text-align: center;
+}
+
+.puzzle-pieces, .puzzle-board {
+	margin-top: 40px;
+	height: 400px;
+	display: inline-block;
+	border: medium solid #333;
+	background-color: #000;
+	color: inherit;
+	overflow: hidden;
+}
+
+.puzzle-pieces {
+	width: 300px;
+	margin-right: 20px;
+
+}
+
+.puzzle-board { width:600px; }
+
+.puzzle-image {
+	width: 40%;
+	display: block;
+	padding: 8px;
+	cursor: pointer;
+}
+
+.puzzle-image:nth-child(even) {
+	float: right;
+	clear: both;
+}
+.puzzle-image:nth-child(odd) {
+	float: left;
+	clear: both;
+}
+
+.drop-zone {
+	width: 49.5%;
+  height: 49.5%;
+  border: thin dashed white;
+  float: left;
+	position: relative;
+}
+
+
+header {
+	position: relative;
+	top: 20px;
+	width:600px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+header h1 {
+	font-size: 3.25em;
+  letter-spacing: 3px;
+	margin: 10px 0
+}
+
+header p, footer p { font-size: 1.7em; letter-spacing: 2px; margin: 10px 0 }
+
+footer {
+	position: relative;
+	top: 65px;
+	width:600px;
+	margin: 0px auto;
+	text-align: center;
+}
+
+#buttonHolder {
+	margin: 0px auto;
+	text-align:center;
+}
+
+#buttonHolder img {
+	margin-left: 5px;
+	margin-right: 5px;
+	border-radius: 20px;
+	border: thin solid #333;
+	cursor: pointer;
+}
+
+#buttonHolder img:hover {
+	opacity:.5;
+}
