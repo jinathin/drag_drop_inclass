@@ -3,11 +3,11 @@
 	// set up the puzzle pieces and boards
 
 	// need a reference to each piecese that we want to create 
-	const thePieces= ["topLeft", "topRight", "bottomLeft", "bottomRight"]
+	const thePieces= ["topLeft", "topRight", "bottomLeft", "bottomRight"];
 
 	// get a reference to the drag side 
 	let piecesBoard = document.querySelector(".puzzle-pieces");
-	let puzzleBoard = document.querySelector(".puzzle-board")
+	let puzzleBoard = document.querySelector(".puzzle-board");
 
 	// get a reference to the buttons at the bottom so we can change the puzzle 
 	let puzzleSelectors = document.querySelectorAll("#buttonHolder img");
@@ -21,9 +21,11 @@
 		// debugger;
 		// loop through the images refs and generate one for each
 		thePieces.forEach((piece, index) => {
-			let newPuzzlePiece = `<img id="piece${index}" class="puzzle-image" src="images/${piece + pictureIndex}.jpg" alt="puzzle piece" draggable>`;
+			let newPuzzlePiece = `<img id="piece${index}" class="puzzle-image"
+			 src="images/${piece + pictureIndex}.jpg" alt="puzzle piece" draggable>`;
 
 			piecesBoard.innerHTML += newPuzzlePiece;
+			console.log(newPuzzlePiece)
 		});
 
 		initDrag();
@@ -44,6 +46,7 @@
 			img.addEventListener("dragstart", function(e) {
 				console.log('draggin...');
 				e.dataTransfer.setData("text/plain", this.id);
+				console.log(this.id);
 			});
 		});
 	}
@@ -61,14 +64,28 @@
 			console.log('you dropped something on me');
 
 			let piece = e.dataTransfer.getData("text/plain");
-			e.target.appendChild(document.querySelector(`#${piece}`));
-		});
+
+			if(zone.innerHTML == ""){
+
+				e.target.appendChild(document.querySelector(`#${piece}`));
+			console.log(zone)
+			}
+			else
+			{
+				false;
+			}
+			
+		})
 	});
+
+
 
 	function resetPuzzlePieces() {
 		// change the current puzzle, regnerate the pieces
 		// debugger;
-		piecesBoard.innerHTML = ""
+		piecesBoard.innerHTML = "";
+		dropZones.forEach(a=>{ a.innerHTML =""});
+		//this resets the drop zone area each time you click the image board
 		createPuzzlePieces(this.dataset.puzzleref);
 	}
 
@@ -77,5 +94,7 @@
 
 	// call this function to set up / generate the pieces on Load
 	createPuzzlePieces(0);
+
+	// debugger;
 
 })();
