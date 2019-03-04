@@ -8,22 +8,28 @@
 </head>
 <body>
 	<header id="headLine">
-		<h1>headline</h1>
-		<p>subhead</p>
+		<h1>simple actions with Java</h1>
+		<p>drag and drop puzzle pieces below!</p>
 	</header>
 	<section id="game-boards">
-		<div class="puzzle-pieces"></div>
-		<div class="puzzle-board"></div>
+		<div class="puzzle-pieces"></div> <!-- this is the drag area  -->
+		<div class="puzzle-board">
+			<div class="drop-zone tl"></div>
+			<div class="drop-zone tr"></div>
+			<div class="drop-zone bl"></div>
+			<div class="drop-zone br"></div>
+		</div>
+			<!-- Short cut to make list === div.drop-zone*4 -->
 	</section>
 	<!-- <section id="wrapper" class="commonSettings"></section> -->
 
 	<footer>
 		<p>click thumb to change pieces!</p>
 		<nav id="buttonHolder">
-			<img src="images/buttonZero.jpg" alt="thumbnail">
-			<img src="images/buttonOne.jpg" alt="thumbnail">
-	    <img src="images/buttonTwo.jpg" alt="thumbnail">
-			<img src="images/buttonThree.jpg" alt="thumbnail">
+			<img data-puzzleref="0" src="images/buttonZero.jpg" alt="thumbnail">
+			<img data-puzzleref="1" src="images/buttonOne.jpg" alt="thumbnail">
+	    	<img data-puzzleref="2" src="images/buttonTwo.jpg" alt="thumbnail">
+			<img data-puzzleref="3" src="images/buttonThree.jpg" alt="thumbnail">
 		</nav>
 	</footer>
 
